@@ -8,7 +8,7 @@
           <h1 class="app-tittle">Expenses</h1>
           <layout-navigation/>
         </div>
-        <div class="col-9">
+        <div class="col-10">
           <router-view/>
         </div>
       </div>
@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import LayoutNavigation from './components/global/layout/LayoutNavigation'
+import LayoutNavigation from './components/layout/LayoutNavigation'
 import BaseSpinner from './components/global/BaseSpinner'
-import LayoutNotification from './components/global/layout/LayoutNotification'
+import LayoutNotification from './components/layout/LayoutNotification'
 
 export default {
   name: 'App',
@@ -48,7 +48,7 @@ export default {
 
 <style lang="scss" scoped>
 #app{
-  background-color: var(--dark);
+  background-color: var(--darkness);
   color: var(--light);
   min-height: 100vh;
   .navigation-sidebar{

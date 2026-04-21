@@ -1,7 +1,7 @@
 <template>
   <button class="btn btn-logout" @click="logout()">
     <i class="fa fa-power-off"></i>
-    Logout
+    Sair
   </button>
 </template>
 
@@ -13,7 +13,7 @@ export default {
 
       await this.$firebase.auth().signOut()
 
-      window.uid = null
+      this.$router.push({ name: 'login' })
 
       this.$root.$emit('Spinner::hide')
     }
@@ -21,14 +21,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.btn-logout{
+<style scoped lang="scss">
+.btn-logout {
   width: 100%;
   cursor: pointer;
-  color: var(--white)!important;
-  &:hover{
-    color: var(--featured)!important;
+  color: var(--white);
+  &:hover {
+    color: var(--featured);
   }
 }
-
 </style>

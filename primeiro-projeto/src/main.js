@@ -4,6 +4,7 @@ import router from './router'
 import '../src/assets/scss/app.scss'
 import BaseSpinner from './components/global/BaseSpinner.vue'
 import firebaseVue from './services/firebase'
+import './util/directives'
 
 Vue.use(firebaseVue)
 Vue.component('base-spinner', BaseSpinner)

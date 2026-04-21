@@ -1,39 +1,37 @@
 <template>
-  <div class="base-spinner fa-4x" v-if="viseble">
+  <div class="base-spinner fa-3x" v-if="visible">
     <i class="fas fa-circle-notch fa-spin"></i>
-     </div>
+  </div>
 </template>
 
 <script>
 export default {
   data () {
     return {
-      viseble: true
+      visible: true
     }
   },
-
   created () {
-    this.$root.$on('Spinner::show', () => { this.viseble = true })
-    this.$root.$on('Spinner::hide', () => { this.viseble = false })
+    this.$root.$on('Spinner::show', () => { this.visible = true })
+    this.$root.$on('Spinner::hide', () => { this.visible = false })
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.base-spinner{
+.base-spinner {
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  position: fixed;
+  z-index: 1000000;
+  position: absolute;
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   background-color: var(--dark-medium);
   color: var(--featured);
-  z-index: 100000;
 }
-
 </style>

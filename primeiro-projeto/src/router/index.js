@@ -30,7 +30,7 @@ const router = new Router({
         icon: 'list',
         title: 'Lista de Gastos'
       },
-      component: () => import(/* webpackChunkName: "login" */ '../pages/lista-gastos/ListaGastos')
+      component: () => import(/* webpackChunkName: "login" */ '../pages/expenses-list/ExpenseList')
     }
   ]
 })

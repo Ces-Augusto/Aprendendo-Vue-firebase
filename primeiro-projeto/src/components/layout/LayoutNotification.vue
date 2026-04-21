@@ -1,7 +1,11 @@
 <template>
-  <div v-if="show" :class="`alert-${type}`" class="alert alert-dismissible fade show">
+  <div
+    v-if="show"
+    :class="`alert-${type}`"
+    class="alert alert-dismissible fade show"
+  >
     {{ message }}
-    <button type="button" class="close" @click="close">
+    <button type="button" class="close" @click="close()">
       <span>&times;</span>
     </button>
   </div>
@@ -15,10 +19,10 @@ export default {
     type: 'danger'
   }),
   created () {
-    this.$root.$on('notification::show', payload => {
+    this.$root.$on('Notification::show', payload => {
       this.show = true
-      this.message = payload.message
       this.type = payload.type
+      this.message = payload.message
 
       setTimeout(() => { this.close() }, payload.timeout || 4000)
     })
@@ -34,7 +38,7 @@ export default {
 </script>
 
 <style scoped>
-.alert{
+.alert {
   top: 20px;
   right: 20px;
   z-index: 1000;
